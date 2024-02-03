@@ -4,9 +4,11 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log"
 	"os"
 	"path/filepath"
 
+	"gitlab.com/atarte/kubectl-display/cmd"
 	"gitlab.com/atarte/kubectl-display/utils"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
@@ -140,7 +142,11 @@ func main() {
 	// }
 	// go WatchNamespaces(client)
 
-	fmt.Scanln()
+	if err := cmd.RootCmd.Execute(); err != nil {
+		log.Fatal(err)
+	}
+
+	// fmt.Scanln()
 	// client, err := getKubeClient()
 	// if err != nil {
 	// 	os.Exit(1)

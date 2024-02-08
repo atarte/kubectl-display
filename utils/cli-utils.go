@@ -19,3 +19,8 @@ func ExitLine() {
 	fmt.Println("Press [enter] to exit.")
 	fmt.Println("")
 }
+
+// PrettyAgeFromTimestamp
+func PrettyAgeFromTimestamp() {
+
+}
